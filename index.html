@@ -32,36 +32,32 @@
     <button id="btn02">向右移动</button>
     <div id="box"></div>
     <script>
-    let box = document.getElementById("box");
-        document.onkeydown = function(event){
-            event = event ||window.event;
-            switch(event.keyCode){
+        let box = document.getElementById("box");
+        let speed = 10;
+        let direct = 0;
+        setInterval(() => {
+            switch (direct) {
                 case 37:
-                    setInterval(()=>{
-                        box.style.left = box.offsetLeft - 10 + "px";
-                    },30)
+                    box.style.left = box.offsetLeft - speed + "px";
                     break;
                 case 38:
-                setInterval(()=>{
-                        box.style.left = box.offsetTop - 10 + "px";
-                    },30)
+                    box.style.top = box.offsetTop - speed + "px";
                     break;
                 case 39:
-                setInterval(()=>{
-                        box.style.left = box.offsetLeft + 10 + "px";
-                    },30)
+                    box.style.left = box.offsetLeft + speed + "px";
                     break;
                 case 40:
-                setInterval(()=>{
-                        box.style.left = box.offsetTop - 10 + "px";
-                    },30)
+                    box.style.top = box.offsetTop + speed + "px";
                     break;
             }
+        }, 30);
+    document.onkeydown = function (event) {
+            event = event || window.event;
+            direct = event.keyCode;
         }
-        document.onkeyup =function(){
-            clearInterval();
-        }
-
+    document.onkeyup = function () {
+        direct = 0;
+    }
          </script>
 </body>
 

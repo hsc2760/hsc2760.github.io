@@ -37,18 +37,31 @@
             event = event ||window.event;
             switch(event.keyCode){
                 case 37:
-                    box.style.left = box.offsetLeft - 10 + "px";
+                    setInterval(()=>{
+                        box.style.left = box.offsetLeft - 10 + "px";
+                    },30)
                     break;
                 case 38:
-                    box.style.top = box.offsetTop - 10 + "px";
+                setInterval(()=>{
+                        box.style.left = box.offsetTop - 10 + "px";
+                    },30)
                     break;
                 case 39:
-                    box.style.left = box.offsetLeft + 10 + "px";
+                setInterval(()=>{
+                        box.style.left = box.offsetLeft + 10 + "px";
+                    },30)
                     break;
                 case 40:
-                    box.style.top = box.offsetTop + 10 + "px";
+                setInterval(()=>{
+                        box.style.left = box.offsetTop - 10 + "px";
+                    },30)
+                    break;
             }
         }
+        document.onkeyup =function(){
+            clearInterval();
+        }
+
          </script>
 </body>
 

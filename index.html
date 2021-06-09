@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        button {
+            padding: 20px;
+            height: 50px;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+<h2>移动练习</h2>
+    <button id="btn01">向左移动</button>
+    <button id="btn02">向右移动</button>
+    <div id="box"></div>
+    <script>
+    let box = document.getElementById("box");
+        document.onkeydown = function(event){
+            event = event ||window.event;
+            switch(event.keyCode){
+                case 37:
+                    box.style.left = box.offsetLeft - 10 + "px";
+                    break;
+                case 38:
+                    box.style.top = box.offsetTop - 10 + "px";
+                    break;
+                case 39:
+                    box.style.left = box.offsetLeft + 10 + "px";
+                    break;
+                case 40:
+                    box.style.top = box.offsetTop + 10 + "px";
+            }
+        }
+         </script>
+</body>
+
+</html>
